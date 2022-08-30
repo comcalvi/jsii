@@ -3090,3 +3090,9 @@ export class VariadicTypeUnion {
     this.union = union;
   }
 }
+
+export class OptionalListTypeUnion {
+  public constructor(
+    public unionProperty: string | number | [StructA | StructB] | undefined,
+  ) {}
+}
