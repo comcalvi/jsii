@@ -18166,7 +18166,14 @@ public class OptionalListTypeUnion extends software.amazon.jsii.JsiiObject {
     /**
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public void setUnionProperty(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+    public void setUnionProperty(final @org.jetbrains.annotations.Nullable java.util.List<software.amazon.jsii.tests.calculator.StructA> value) {
+        software.amazon.jsii.Kernel.set(this, "unionProperty", value);
+    }
+
+    /**
+     */
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public void setUnionProperty(final @org.jetbrains.annotations.Nullable java.util.List<software.amazon.jsii.tests.calculator.StructB> value) {
         software.amazon.jsii.Kernel.set(this, "unionProperty", value);
     }
 }
@@ -28281,7 +28288,7 @@ exports[`Generated code for "jsii-calc": <runtime-type-check-diff>/java/src/main
 exports[`Generated code for "jsii-calc": <runtime-type-check-diff>/java/src/main/java/software/amazon/jsii/tests/calculator/OptionalListTypeUnion.java.diff 1`] = `
 --- java/src/main/java/software/amazon/jsii/tests/calculator/OptionalListTypeUnion.java	--no-runtime-type-checking
 +++ java/src/main/java/software/amazon/jsii/tests/calculator/OptionalListTypeUnion.java	--runtime-type-checking
-@@ -19,10 +19,41 @@
+@@ -19,10 +19,30 @@
       * @param unionProperty
       */
      @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -28296,25 +28303,14 @@ exports[`Generated code for "jsii-calc": <runtime-type-check-diff>/java/src/main
 +                throw new IllegalArgumentException(
 +                    new java.lang.StringBuilder("Expected ")
 +                        .append("unionProperty")
-+                        .append(" to be one of: java.lang.String, java.lang.Number, java.util.List<java.lang.Object>; received ")
++                        .append(" to be one of: java.lang.String, java.lang.Number, java.util.List<software.amazon.jsii.tests.calculator.StructA>, java.util.List<software.amazon.jsii.tests.calculator.StructB>; received ")
 +                        .append(unionProperty.getClass()).toString());
 +            }
 +            if (unionProperty instanceof java.util.List) {
 +                @SuppressWarnings("unchecked")
-+                final java.util.List<java.lang.Object> __cast_7e4c6f = (java.util.List<java.lang.Object>)unionProperty;
++                final java.util.List<software.amazon.jsii.tests.calculator.StructA> __cast_7e4c6f = (java.util.List<software.amazon.jsii.tests.calculator.StructA>)unionProperty;
 +                for (int __idx_1ccdf0 = 0; __idx_1ccdf0 < __cast_7e4c6f.size(); __idx_1ccdf0++) {
-+                    final java.lang.Object __val_1ccdf0 = __cast_7e4c6f.get(__idx_1ccdf0);
-+                    if (
-+                         !(__val_1ccdf0 instanceof software.amazon.jsii.tests.calculator.StructA)
-+                        && !(__val_1ccdf0 instanceof software.amazon.jsii.tests.calculator.StructB)
-+                        && !(__val_1ccdf0.getClass().equals(software.amazon.jsii.JsiiObject.class))
-+                    ) {
-+                        throw new IllegalArgumentException(
-+                            new java.lang.StringBuilder("Expected ")
-+                                .append("unionProperty").append(".get(").append(__idx_1ccdf0).append(")")
-+                                .append(" to be one of: software.amazon.jsii.tests.calculator.StructA, software.amazon.jsii.tests.calculator.StructB; received ")
-+                                .append(__val_1ccdf0.getClass()).toString());
-+                    }
++                    final software.amazon.jsii.tests.calculator.StructA __val_1ccdf0 = __cast_7e4c6f.get(__idx_1ccdf0);
 +                }
 +            }
 +        }
@@ -28323,31 +28319,6 @@ exports[`Generated code for "jsii-calc": <runtime-type-check-diff>/java/src/main
  
      /**
       */
-@@ -55,8 +86,24 @@
- 
-     /**
-      */
-     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-     public void setUnionProperty(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-+                if (
-+                     !(__val_ac66f0 instanceof software.amazon.jsii.tests.calculator.StructA)
-+                    && !(__val_ac66f0 instanceof software.amazon.jsii.tests.calculator.StructB)
-+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
-+                ) {
-+                    throw new IllegalArgumentException(
-+                        new java.lang.StringBuilder("Expected ")
-+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
-+                            .append(" to be one of: software.amazon.jsii.tests.calculator.StructA, software.amazon.jsii.tests.calculator.StructB; received ")
-+                            .append(__val_ac66f0.getClass()).toString());
-+                }
-+            }
-+        }
-         software.amazon.jsii.Kernel.set(this, "unionProperty", value);
-     }
- }
 `;
 
 exports[`Generated code for "jsii-calc": <runtime-type-check-diff>/java/src/main/java/software/amazon/jsii/tests/calculator/StructUnionConsumer.java.diff 1`] = `
